@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  {{ partial "header.html" }}
+  <title>All projects</title>
+  </head>
+<body>
+    <div><a href="/">Return Home</a></div>
+    {{ .Content }}
+    {{ range where .Site.Pages "Params.pagetype" "project" }}
+        <div class="project">
+            <div class="project-info">
+                {{if .Params.livelink }}
+                    <a href="{{ .Params.livelink }}">{{ .Title }}</a>
+                {{end}}
+                {{if not .Params.livelink }}
+                    {{ .Title }}
+                {{end}}
+                {{ range .Params.tech }}
+                    <span class="project-tech">{{ . }}</span>
+                {{end}}
+            </div>
+            <div class="project-desc">
+                {{ .Params.shortdesc }}
+            </div>
+            <div class="project-links">
+                {{if .Params.gitrepo }}
+                    <a href="{{ .Params.gitrepo }}">Git</a>
+                {{end}}
+            </div>
+        </div>
+    {{ end }}
+</body>
+</html>

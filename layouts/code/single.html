@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  {{ partial "header.html" }}
+  <title>All projects</title>
+  </head>
+<body>
+    <div><a href="/">Return Home</a></div>
+    {{ .Content }}
+    {{ range where .Site.Pages "Params.pageType" "project" }}
+        <div>
+            <a href="{{ .livelink }}">Deployed here</a>, <a href="{{ .gitRepo }}">code here</a>.
+        </div>
+    {{ end }}
+</body>
+</html>

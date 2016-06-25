@@ -1,0 +1,10 @@
+baseurl = "temoa.io"
+languageCode = "en-us"
+title = "Teòma: a collective for third-culture things"
+
+disableRSS = true
+canonifyurls = false
+
+[taxonomies]
+tag = ""
+category = ""

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  {{ partial "header.html" .}}
+  <title>{{ .Title }}</title>
+  </head>
+<body>
+    <div>
+        {{ range where .Data.Pages "Params.pagetype" "homepage" }}
+            {{ .Content }}
+        {{ end }}
+    </div>
+</body>
+</html>
